@@ -4,12 +4,13 @@
   "description": "sjasjjh",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^9.28.0"
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0"
   }
 }
