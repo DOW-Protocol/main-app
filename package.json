@@ -1,6 +1,7 @@
 {
   "name": "main-app",
   "version": "1.0.0",
+  "type": "module",
   "description": "sjasjjh",
   "main": "index.js",
   "scripts": {
