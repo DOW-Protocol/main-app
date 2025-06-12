@@ -1,0 +1,18 @@
+{
+  "0xa51afafe0263b40edaef0df8781ea9aa03e381a3": {
+    "name": "Uniswap: Universal Router",
+    "emoji": "🦄"
+  },
+  "0x794a61358D6845594F94dc1DB02A252b5b4814aD": {
+    "name": "Aave v3: Pool",
+    "emoji": "👻"
+  },
+  "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506": {
+    "name": "SushiSwap: Router",
+    "emoji": "🍣"
+  },
+  "0x3a23F943181408EAC424116Af7b7790c94Cb97a5": {
+    "name": "Bungee: Socket Bridge",
+    "emoji": "🌉"
+  }
+}
