@@ -29,4 +29,4 @@ jobs:
 
       # Langkah 4: Jalankan pemeriksaan linter!
       - name: Run ESLint
-        run: npm run lints
+        run: npm run lint
