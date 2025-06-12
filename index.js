@@ -18,7 +18,7 @@ async function processBlock(provider) {
 
     // LOGIKA BARU: Cek apakah blok ini sudah pernah diproses
     if (block.number === lastProcessedBlock) {
-      console.log(`[<span class="math-inline">\{new Date\(\)\.toLocaleTimeString\(\)\}\] Blok masih sama \(</span>{block.number}), skip...`);
+      console.log(`[${new Date().toLocaleTimeString()}] Blok masih sama (${block.number}), skip...`);
       return; // Hentikan fungsi jika bloknya sama
     }
 
