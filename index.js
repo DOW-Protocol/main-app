@@ -1,52 +1,45 @@
-// Import library ethers
 import { ethers } from "ethers";
 
-// PENTING: Ganti dengan URL RPC dari Alchemy/Infura lo
 const RPC_URL = "https://shape-mainnet.g.alchemy.com/v2/dk0hyao4gWu0HegBmtZEgydbF3WRQVky";
+const INTERVAL_MS = 15000; // Interval pengecekan: 15 detik
 
-/**
- * Fungsi ini khusus untuk membuat koneksi ke provider blockchain.
- * @returns {ethers.JsonRpcProvider} - Object provider yang sudah terhubung.
- */
 function connectToProvider() {
   console.log("Mencoba menghubungkan ke Arbitrum...");
   const provider = new ethers.JsonRpcProvider(RPC_URL);
   return provider;
 }
 
-/**
- * Fungsi ini khusus untuk memproses satu blok.
- * @param {ethers.JsonRpcProvider} provider - Object provider yang aktif.
- * @param {number | 'latest'} blockNumber - Nomor blok yang ingin diproses.
- */
-async function processBlock(provider, blockNumber) {
+async function processBlock(provider) {
   try {
-    const block = await provider.getBlock(blockNumber);
-    console.log(`✅ Berhasil mengambil data dari Blok Nomor: ${block.number}`);
+    const block = await provider.getBlock('latest');
+    console.log(`\n[${new Date().toLocaleTimeString()}] Memeriksa Blok Nomor: ${block.number}`);
 
     const transactionHashes = block.transactions;
 
     if (transactionHashes.length === 0) {
       console.log("--> Tidak ada transaksi di dalam blok ini.");
     } else {
-      console.log(`--> Ditemukan ${transactionHashes.length} transaksi. Menampilkan hingga 10 hash pertama:`);
-      console.log("====================================================");
-
-      const first10Hashes = transactionHashes.slice(0, 10);
-      first10Hashes.forEach((txHash, index) => {
-        console.log(`${index + 1}. ${txHash}`);
-      });
+      console.log(`--> Ditemukan ${transactionHashes.length} transaksi.`);
+      // Di sini kita bisa tambahkan logika lain nanti
     }
   } catch (error) {
-    console.error(`❌ Gagal mengambil atau memproses blok ${blockNumber}:`, error.message);
+    console.error("❌ Gagal mengambil atau memproses blok:", error.message);
   }
 }
 
-// Fungsi utama yang sekarang lebih bersih
+// Fungsi utama yang sekarang menjalankan loop
 async function main() {
   const provider = connectToProvider();
-  await processBlock(provider, 'latest');
+
+  console.log(`Watchtower DOW Protocol dimulai. Pengecekan setiap ${INTERVAL_MS / 1000} detik.`);
+
+  // Jalankan pertama kali langsung
+  await processBlock(provider);
+
+  // Kemudian jalankan berulang kali sesuai interval
+  setInterval(() => {
+    processBlock(provider);
+  }, INTERVAL_MS);
 }
 
-// Menjalankan fungsi utama
 main();
