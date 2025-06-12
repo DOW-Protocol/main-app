@@ -1,0 +1,33 @@
+# Nama dari workflow/satpam kita
+name: Lint Check
+
+# Kapan satpam ini harus berjaga?
+# Di sini kita atur: setiap kali ada Pull Request ke branch 'main'
+on:
+  pull_request:
+    branches: [ main ]
+
+# Pekerjaan apa yang harus dilakukan satpam?
+jobs:
+  # Nama pekerjaannya: lint
+  lint:
+    name: Run Linter
+    runs-on: ubuntu-latest
+    steps:
+      # Langkah 1: "Amankan TKP" (salin kode dari PR)
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Langkah 2: "Siapkan peralatan" (install Node.js)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # Langkah 3: "Install semua modul yang dibutuhkan"
+      - name: Install dependencies
+        run: npm install
+
+      # Langkah 4: "Jalankan pemeriksaan!" (menjalankan linter)
+      - name: Run ESLint
+        run: npm run lint

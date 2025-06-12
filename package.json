@@ -1,0 +1,12 @@
+{
+  "name": "main-app",
+  "version": "1.0.0",
+  "description": "sjasjjh",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
