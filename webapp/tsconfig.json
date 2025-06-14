@@ -19,11 +19,7 @@
       }
     ],
     "paths": {
-     fitur/s4-desain-layout
       "@/*": ["./*"]
-
-      "@/*": ["./src/*"]
-       main
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
