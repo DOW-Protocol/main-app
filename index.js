@@ -1,5 +1,5 @@
 import { getLatestBlock, genericInterface } from './services/blockchain.js';
-import { startDiscordBot, sendMessage } from './services/discord.js';
+import { loginToDiscord, sendAndRecordMessage } from './services/discord.js';
 import { detectSandwichAttack } from './analysis/sandwichDetector.js';
 import { config } from './config.js';
 import knownAddresses from './knownAddresses.json' with { type: "json" };
@@ -27,7 +27,7 @@ async function mainLoop() {
         const contractInfo = knownAddresses[key];
         const alertMessage = `${contractInfo.emoji} **${contractInfo.name} Alert!**\nTerdeteksi transaksi di Blok ${block.number}.\n[Lihat Transaksi](https://arbiscan.io/tx/${tx.hash})`;
         console.log(`--> Terdeteksi aktivitas di ${contractInfo.name}!`);
-        await sendMessage(alertMessage);
+        await sendAndRecordMessage(alertMessage);
       }
     }
 
@@ -45,7 +45,7 @@ async function mainLoop() {
 }
 
 async function run() {
-  await startDiscordBot();
+  await loginToDiscord(); 
   const block = await getLatestBlock();
   if (block && block.number) lastProcessedBlock = block.number;
   console.log(`Watchtower DOW Protocol dimulai. Pengecekan setiap ${config.INTERVAL_MS / 1000} detik.`);
