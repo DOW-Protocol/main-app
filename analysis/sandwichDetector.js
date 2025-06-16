@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { sendMessage } from '../services/discord.js';
+import { sendAndRecordMessage } from '../services/discord.js';
 
 /**
  * Fungsi untuk mendeteksi pola sandwich attack dan mengirim notifikasi detail.
@@ -44,7 +44,7 @@ export async function detectSandwichAttack(transactions, blockNumber, genericInt
 `;
 
           console.log("--> Pola sandwich terdeteksi! Mengirim rich alert...");
-          await sendMessage(alertMessage);
+          await sendAndRecordMessage(alertMessage);
           i += 2; // Lewati dua transaksi berikutnya karena sudah diproses
         }
       } catch (e) {
