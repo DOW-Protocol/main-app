@@ -1,11 +1,14 @@
+// file: services/blockchain.js (VERSI BENAR)
 import { ethers } from "ethers";
 import { config } from '../config.js';
-import genericABI from "../genericABI.json" with { type: "json" }; // Tambahkan ini
 
+// Tugasnya hanya membuat satu provider koneksi
 const provider = new ethers.JsonRpcProvider(config.RPC_URL);
-export const genericInterface = new ethers.Interface(genericABI); // Tambahkan ini
+
+// Tugasnya hanya satu: mengambil blok terbaru, lengkap dengan detail transaksinya
 export async function getLatestBlock() {
   try {
+    // Kita tetap ambil detail transaksi di sini untuk efisiensi
     const block = await provider.getBlock('latest', true);
     return block;
   } catch (error) {
