@@ -13,21 +13,28 @@ export async function loginToDiscord() {
   await client.login(config.BOT_TOKEN);
 }
 
-export async function sendAndRecordMessage(message) {
+// Fungsi ini sekarang menjadi satu-satunya sumber pengiriman pesan dan pencatatan
+export async function sendAndRecordMessage(alertObject, io) {
   try {
+    // 1. Kirim pesan ke Discord
     const channel = await client.channels.fetch(config.CHANNEL_ID);
     if (channel && channel.isTextBased()) {
-      channel.send(message);
+      channel.send(alertObject.text);
     }
 
+    // 2. Tulis seluruh object ke db.json
     const data = await fs.readFile(dbPath, 'utf-8');
     const db = JSON.parse(data);
-    db.alerts.unshift({ message, timestamp: new Date().toISOString() });
+    db.alerts.unshift(alertObject);
     if (db.alerts.length > 50) {
       db.alerts.pop();
     }
     await fs.writeFile(dbPath, JSON.stringify(db, null, 2));
 
+    // 3. Siarkan via WebSocket
+    if (io) {
+      io.emit('new_alert', alertObject);
+    }
   } catch (error) {
     console.error(`❌ Gagal mengirim atau mencatat pesan: ${error.message}`);
   }
