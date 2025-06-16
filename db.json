@@ -1,6 +1,14 @@
 {
   "alerts": [
     {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 347972660.\n[Lihat Transaksi](https://arbiscan.io/tx/0x23b41963b99b2939e6e3002d3594d9229ba575c84c522811046a4615f04a7e6a)",
+      "timestamp": "2025-06-16T13:58:05.075Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 347972540.\n[Lihat Transaksi](https://arbiscan.io/tx/0x3dd8b2974f3b0a01aad64c7a6c42f794fda0ff38549de34a7f7a6286a4879bec)",
+      "timestamp": "2025-06-16T13:57:35.080Z"
+    },
+    {
       "text": "🍣 **SushiSwap: Router Alert!**\nTerdeteksi transaksi di Blok 347961889.\n[Lihat Transaksi](https://arbiscan.io/tx/0x57c50e29612f91a1a6dece28c74be8919fe1c131ccd508d0e66e5a2d1471b466)",
       "timestamp": "2025-06-16T13:13:09.696Z"
     },
