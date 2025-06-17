@@ -4,6 +4,7 @@ import { config } from '../config.js';
 const supabase = createClient(config.SUPABASE_URL, config.SUPABASE_SERVICE_KEY);
 
 export async function getWatchersForAddress(address) {
+  console.log('Querying Supabase for address:', address.toLowerCase());
   const { data, error } = await supabase
     .from('watchlist')
     .select('user_id')
@@ -13,5 +14,5 @@ export async function getWatchersForAddress(address) {
     console.error('❌ Error fetching watchlist dari Supabase:', error);
     return [];
   }
-  return data.map(item => item.user_id);
+  return Array.isArray(data) ? data.map(item => item.user_id) : [];
 }
