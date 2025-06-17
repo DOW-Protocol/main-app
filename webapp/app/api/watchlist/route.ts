@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
@@ -19,7 +18,7 @@ export async function POST(req: Request) {
 
     const { data, error } = await supabase
       .from('watchlist')
-      .insert({ user_Id: userId, address: address.toLowerCase() })
+      .insert({ user_id: userId, address: address.toLowerCase() })
       .select();
 
     if (error) {
@@ -32,7 +31,7 @@ export async function POST(req: Request) {
   }
 }
 
-export async function GET(req: Request) {
+export async function GET() {
   try {
     const { data, error } = await supabase
       .from('watchlist')
@@ -63,7 +62,7 @@ export async function DELETE(req: Request) {
     const { error } = await supabase
       .from('watchlist')
       .delete()
-      .eq('user_Id', userId)
+      .eq('user_id', userId)
       .eq('address', address.toLowerCase());
 
     if (error) {

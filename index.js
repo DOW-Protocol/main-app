@@ -36,11 +36,9 @@ async function mainLoop() {
 
     const allAlertsInBlock = [];
 
-    // Deteksi aktivitas ke alamat yang dipantau & decode jika ABI tersedia
     for (const tx of block.prefetchedTransactions || []) {
       const toAddress = tx.to ? tx.to.toLowerCase() : null;
-      if (!toAddress) continue;
-      if (!monitoredAddresses.includes(toAddress)) continue;
+      if (!toAddress || !monitoredAddresses.includes(toAddress)) continue;
 
       const iface = interfaces[toAddress];
       const key = Object.keys(knownAddresses).find(k => k.toLowerCase() === toAddress);
@@ -67,12 +65,12 @@ async function mainLoop() {
       // Cari siapa saja yang memantau address ini dan kirim DM ke mereka
       try {
         const userIds = await getWatchersForAddress(toAddress);
+        console.log('userIds:', userIds);
         if (Array.isArray(userIds) && userIds.length > 0) {
           console.log(`--> Ditemukan ${userIds.length} pengguna yang memantau alamat ${toAddress}`);
           for (const userId of userIds) {
-            if (userId && typeof userId === 'string') {
-              await sendDirectMessage(userId, alertMessage);
-            }
+            console.log('Mengirim DM ke:', userId);
+            await sendDirectMessage(userId, alertMessage);
           }
         }
       } catch (err) {

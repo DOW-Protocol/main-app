@@ -1,3 +1,4 @@
+// Fungsi ini sekarang mengembalikan array of strings (pesan alert)
 export function detectSandwichAttack(transactions, blockNumber, genericInterface) {
   const alerts = [];
   if (!Array.isArray(transactions) || transactions.length < 3) {
@@ -16,13 +17,11 @@ export function detectSandwichAttack(transactions, blockNumber, genericInterface
         const decodedTx3 = genericInterface.parseTransaction({ data: tx3.data, value: tx3.value });
 
         if (decodedTx1 && decodedTx2 && decodedTx3) {
-          // Siapkan pesan lengkap dengan link
           const alertMessage = `🥪 **Potensi Sandwich Attack Terdeteksi di Blok ${blockNumber}!**\n**Attacker:** ${tx1.from}\n**Korban:** ${tx2.from}\n[Lihat Transaksi Korban](https://arbiscan.io/tx/${tx2.hash})`;
           alerts.push(alertMessage); // Tambahkan ke array, jangan kirim langsung
           i += 2;
         }
-      // eslint-disable-next-line no-unused-vars
-      } catch (e) {
+      } catch {
         continue;
       }
     }
