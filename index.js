@@ -1,9 +1,9 @@
-/* eslint-disable no-unused-vars */
 import { getLatestBlock } from './services/blockchain.js';
-import { loginToDiscord, sendAndRecordMessage } from './services/discord.js';
+import { loginToDiscord, sendAndRecordMessage, sendDirectMessage } from './services/discord.js';
 import { detectSandwichAttack } from './analysis/sandwichDetector.js';
 import { config } from './config.js';
 import { startSocketServer } from './services/socket.js';
+import { getWatchersForAddress } from './services/database.js';
 import knownAddresses from './knownAddresses.json' with { type: "json" };
 import uniswapABI from './abis/uniswap.json' with { type: "json" };
 import aaveABI from './abis/aave.json' with { type: "json" };
@@ -39,26 +39,44 @@ async function mainLoop() {
     // Deteksi aktivitas ke alamat yang dipantau & decode jika ABI tersedia
     for (const tx of block.prefetchedTransactions || []) {
       const toAddress = tx.to ? tx.to.toLowerCase() : null;
+      if (!toAddress) continue;
+      if (!monitoredAddresses.includes(toAddress)) continue;
+
       const iface = interfaces[toAddress];
-      if (toAddress && monitoredAddresses.includes(toAddress)) {
-        const key = Object.keys(knownAddresses).find(k => k.toLowerCase() === toAddress);
-        const contractInfo = knownAddresses[key];
-        let alertMessage = '';
-        try {
-          if (iface) {
-            const decodedData = iface.parseTransaction({ data: tx.data, value: tx.value });
-            if (decodedData) {
-              alertMessage = `${contractInfo.emoji} **${contractInfo.name} Alert!**\nFungsi **${decodedData.name}** dipanggil di Blok ${block.number}.\n[Lihat Transaksi](https://arbiscan.io/tx/${tx.hash})`;
-            }
+      const key = Object.keys(knownAddresses).find(k => k.toLowerCase() === toAddress);
+      const contractInfo = knownAddresses[key];
+      let alertMessage = '';
+
+      try {
+        if (iface) {
+          const decodedData = iface.parseTransaction({ data: tx.data, value: tx.value });
+          if (decodedData) {
+            alertMessage = `${contractInfo.emoji} **${contractInfo.name} Alert!**\nFungsi **${decodedData.name}** dipanggil di Blok ${block.number}.\n[Lihat Transaksi](https://arbiscan.io/tx/${tx.hash})`;
           }
-          if (!alertMessage) {
-            alertMessage = `${contractInfo.emoji} **${contractInfo.name} Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok ${block.number}.\n[Lihat Transaksi](https://arbiscan.io/tx/${tx.hash})`;
-          }
-        } catch (e) {
+        }
+        if (!alertMessage) {
           alertMessage = `${contractInfo.emoji} **${contractInfo.name} Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok ${block.number}.\n[Lihat Transaksi](https://arbiscan.io/tx/${tx.hash})`;
         }
-        allAlertsInBlock.push(alertMessage);
-        console.log(`--> Terdeteksi aktivitas di ${contractInfo.name}!`);
+      } catch {
+        alertMessage = `${contractInfo.emoji} **${contractInfo.name} Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok ${block.number}.\n[Lihat Transaksi](https://arbiscan.io/tx/${tx.hash})`;
+      }
+
+      allAlertsInBlock.push(alertMessage);
+      console.log(`--> Terdeteksi aktivitas di ${contractInfo.name}!`);
+
+      // Cari siapa saja yang memantau address ini dan kirim DM ke mereka
+      try {
+        const userIds = await getWatchersForAddress(toAddress);
+        if (Array.isArray(userIds) && userIds.length > 0) {
+          console.log(`--> Ditemukan ${userIds.length} pengguna yang memantau alamat ${toAddress}`);
+          for (const userId of userIds) {
+            if (userId && typeof userId === 'string') {
+              await sendDirectMessage(userId, alertMessage);
+            }
+          }
+        }
+      } catch (err) {
+        console.error(`❌ Gagal mengirim DM ke watcher: ${err.message}`);
       }
     }
 
@@ -69,12 +87,12 @@ async function mainLoop() {
     );
     if (sushiTransactions.length > 0) {
       const sandwichAlerts = detectSandwichAttack(sushiTransactions, block.number, interfaces[sushiRouterAddress]);
-      if (sandwichAlerts.length > 0) {
+      if (Array.isArray(sandwichAlerts) && sandwichAlerts.length > 0) {
         allAlertsInBlock.push(...sandwichAlerts);
       }
     }
 
-    // Kirim semua alert yang terkumpul
+    // Kirim semua alert yang terkumpul ke Discord channel & WebSocket
     if (allAlertsInBlock.length > 0) {
       const finalMessage = allAlertsInBlock.join('\n\n---\n\n');
       const alertObject = { text: finalMessage, timestamp: new Date().toISOString() };
