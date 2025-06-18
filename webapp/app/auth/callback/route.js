@@ -1,14 +1,12 @@
-import { createServer } from '@/app/lib/supabase'
+import { createServer } from '@/app/lib/supabase-server'
 import { NextResponse } from 'next/server'
-import { cookies } from 'next/headers'
 
 export async function GET(request) {
   const requestUrl = new URL(request.url)
   const code = requestUrl.searchParams.get('code')
-  const cookieStore = cookies()
 
   if (code) {
-    const supabase = createServer(cookieStore)
+    const supabase = createServer()
     await supabase.auth.exchangeCodeForSession(code)
   }
 

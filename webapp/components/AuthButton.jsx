@@ -1,11 +1,11 @@
-import { createServer } from '@/app/lib/supabase'
+import { createServer } from '@/app/lib/supabase-server'
 import { cookies } from 'next/headers'
 import Link from 'next/link'
 import LogoutButton from './LogoutButton'
 
 export default async function AuthButton() {
   const cookieStore = cookies()
-  const supabase = createServer(cookieStore)
+  const supabase = createServer()
   const { data: { session } } = await supabase.auth.getSession()
 
   return session ? (

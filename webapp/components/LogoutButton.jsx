@@ -1,6 +1,6 @@
 'use client'
 
-import { createBrowserClient } from '@/app/lib/supabase'
+import { createBrowserClient } from '@/app/lib/supabase-browser'
 import { useRouter } from 'next/navigation'
 
 export default function LogoutButton() {
