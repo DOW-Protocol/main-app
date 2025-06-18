@@ -1,13 +1,13 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { createClient } from '@/app/lib/supabase'
+import { createBrowserClient } from '@/app/lib/supabase'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 export default function AuthStatus() {
   const [session, setSession] = useState(null)
-  const supabase = createClient()
+  const supabase = createBrowserClient()
   const router = useRouter()
 
   useEffect(() => {
