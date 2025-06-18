@@ -1,20 +1,21 @@
-import { createClient } from '@supabase/auth-helpers-nextjs'
+import {
+  createServerComponentClient,
+  createServerActionClient,
+  createMiddlewareClient,
+} from '@supabase/auth-helpers-nextjs'
+import { cookies } from 'next/headers'
 
-// Client component client
+// Untuk server component (misal di Server Component atau Route Handler)
+export const createServerClient = () =>
+  createServerComponentClient({ cookies })
+
+// Untuk client component (gunakan supabase-js langsung)
+import { createClient } from '@supabase/supabase-js'
+
 export const createBrowserClient = () =>
   createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  )
-
-// Server component client (misal di Server Actions atau Route Handlers)
-export const createServerClient = (cookieStore) =>
-  createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-    {
-      cookies: () => cookieStore,
-    }
   )
 
 // Alias agar import { createServer } tetap jalan
