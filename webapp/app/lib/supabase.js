@@ -16,3 +16,6 @@ export const createServerClient = (cookieStore) =>
       cookies: () => cookieStore,
     }
   )
+
+// Alias agar import { createServer } tetap jalan
+export const createServer = createServerClient
