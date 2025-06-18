@@ -3,7 +3,7 @@ import { loginToDiscord, sendAndRecordMessage, sendDirectMessage } from './servi
 import { detectSandwichAttack } from './analysis/sandwichDetector.js';
 import { config } from './config.js';
 import { startSocketServer } from './services/socket.js';
-import { getWatchersForAddress } from './services/database.js';
+import { getWatchersForAddress, recordAlert } from './services/database.js';
 import knownAddresses from './knownAddresses.json' with { type: "json" };
 import uniswapABI from './abis/uniswap.json' with { type: "json" };
 import aaveABI from './abis/aave.json' with { type: "json" };
@@ -78,15 +78,16 @@ async function mainLoop() {
       }
     }
 
-    // Deteksi sandwich attack pada SushiSwap
-    const sushiRouterAddress = config.SUSHISWAP_ROUTER_ADDRESS.toLowerCase();
-    const sushiTransactions = (block.prefetchedTransactions || []).filter(
-      tx => tx && tx.to && tx.to.toLowerCase() === sushiRouterAddress
-    );
-    if (sushiTransactions.length > 0) {
-      const sandwichAlerts = detectSandwichAttack(sushiTransactions, block.number, interfaces[sushiRouterAddress]);
-      if (Array.isArray(sandwichAlerts) && sandwichAlerts.length > 0) {
-        allAlertsInBlock.push(...sandwichAlerts);
+    // Deteksi sandwich attack untuk semua contract di interfaces
+    for (const [address, iface] of Object.entries(interfaces)) {
+      const contractTransactions = (block.prefetchedTransactions || []).filter(
+        tx => tx && tx.to && tx.to.toLowerCase() === address
+      );
+      if (contractTransactions.length > 0) {
+        const sandwichAlerts = detectSandwichAttack(contractTransactions, block.number, iface);
+        if (Array.isArray(sandwichAlerts) && sandwichAlerts.length > 0) {
+          allAlertsInBlock.push(...sandwichAlerts);
+        }
       }
     }
 
@@ -95,6 +96,7 @@ async function mainLoop() {
       const finalMessage = allAlertsInBlock.join('\n\n---\n\n');
       const alertObject = { text: finalMessage, timestamp: new Date().toISOString() };
       console.log(`--> Terdeteksi ${allAlertsInBlock.length} alert, mengirim ke Discord & WebSocket...`);
+      await recordAlert(alertObject);
       await sendAndRecordMessage(alertObject, io);
     }
   } catch (err) {

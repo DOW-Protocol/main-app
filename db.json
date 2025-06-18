@@ -1,6 +1,178 @@
 {
   "alerts": [
     {
+      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348478361.\n[Lihat Transaksi](https://arbiscan.io/tx/0xb6da3b766d81a56a8b9b6d8e5595a8949e5d873e358c056f7d5cbbb673056a50)",
+      "timestamp": "2025-06-18T01:12:00.558Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348478123.\n[Lihat Transaksi](https://arbiscan.io/tx/0xac226f1680f09ccf35bf3013308e0a34b74f9c4e718f9def8a76ee720959c102)",
+      "timestamp": "2025-06-18T01:11:00.450Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348478019.\n[Lihat Transaksi](https://arbiscan.io/tx/0x96b3dc3a7193b843808e711ab558cc7ef0fffcc89d5cb3558cc66618faca45fb)",
+      "timestamp": "2025-06-18T01:10:34.367Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348477991.\n[Lihat Transaksi](https://arbiscan.io/tx/0x5cc89ed129ea9acc7b71ee1e29b2893dc969364a33542998d9db5f69a94c2ea9)",
+      "timestamp": "2025-06-18T01:10:27.772Z"
+    },
+    {
+      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348477406.\n[Lihat Transaksi](https://arbiscan.io/tx/0x1ea5afb3b1e1c13aa154a860baccd6426d384748757bdfb91d6190f35b476dfc)",
+      "timestamp": "2025-06-18T01:08:00.196Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348477338.\n[Lihat Transaksi](https://arbiscan.io/tx/0xbc4a95bb2f458eab74c04ff0c1e9779c700b4f4bf64e309a7a48fc87f1dcd224)",
+      "timestamp": "2025-06-18T01:07:43.149Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348477315.\n[Lihat Transaksi](https://arbiscan.io/tx/0x24f3cb3935bcbf9a426f926c660d3b71e82a56b415f74afb09d7af52c6268b04)",
+      "timestamp": "2025-06-18T01:07:38.365Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348476998.\n[Lihat Transaksi](https://arbiscan.io/tx/0x1e9ff6e5521d6d7e2edbe9283c1d538eb5b3a94ae0c48f719780c652246e753c)",
+      "timestamp": "2025-06-18T01:06:19.546Z"
+    },
+    {
+      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348476968.\n[Lihat Transaksi](https://arbiscan.io/tx/0x2dcdb163de15f555eecd95ad7fbf89adf5824bd1429a6a58abb97ccc9dc27097)",
+      "timestamp": "2025-06-18T01:06:10.326Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348476774.\n[Lihat Transaksi](https://arbiscan.io/tx/0x875f3a75fa1b1e501f703180512f5caf718943feffc0c4e3dc4f9cd567401f78)",
+      "timestamp": "2025-06-18T01:05:22.214Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348476702.\n[Lihat Transaksi](https://arbiscan.io/tx/0xb5475d5b114b5029529177eac32243a00194f863bee1092c6ef7e2c1685ab6d9)",
+      "timestamp": "2025-06-18T01:05:05.084Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348476021.\n[Lihat Transaksi](https://arbiscan.io/tx/0xe3170d2be4a23167b83c4a95fb62c8b8215a148795a913bc71698e9bdcdcf2d8)",
+      "timestamp": "2025-06-18T01:02:13.309Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348475885.\n[Lihat Transaksi](https://arbiscan.io/tx/0x4dcb514b92ff973b33ce6c02f00c136f833a64603d52275791d237697f280139)",
+      "timestamp": "2025-06-18T01:01:38.777Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348475861.\n[Lihat Transaksi](https://arbiscan.io/tx/0x8acd349ea016e0feaef82e712843346299669f158885663a34febef4b02f0119)",
+      "timestamp": "2025-06-18T01:01:32.831Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348475817.\n[Lihat Transaksi](https://arbiscan.io/tx/0xdf2bcbe0610a0da854cd47f8cecae50296d90c0c30bfa75371e91035ea9d6e15)",
+      "timestamp": "2025-06-18T01:01:21.382Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348475524.\n[Lihat Transaksi](https://arbiscan.io/tx/0xe6fb18f600313b62d87b8614a59f5c510c671c9ce58a58f76f5451595e1c3a35)",
+      "timestamp": "2025-06-18T01:00:08.711Z"
+    },
+    {
+      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348475519.\n[Lihat Transaksi](https://arbiscan.io/tx/0xfa330c31586e6fa1428c76fa4dc140ef6cc464359acb00e3be9aa3b7a17adb9f)",
+      "timestamp": "2025-06-18T01:00:08.143Z"
+    },
+    {
+      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348355449.\n[Lihat Transaksi](https://arbiscan.io/tx/0x7b5f30645635dc07b73710481dccb6a6129997290b6ae2362ee6c850e2b327be)",
+      "timestamp": "2025-06-17T16:35:48.365Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348355210.\n[Lihat Transaksi](https://arbiscan.io/tx/0x680acb9dbe7b68d1e488760ba6e116ddd02655dec7d9da187c148fbdbbc6b433)",
+      "timestamp": "2025-06-17T16:34:48.258Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348354246.\n[Lihat Transaksi](https://arbiscan.io/tx/0x176c7f43d3f6343b784b870e1ae0f74f1011ca39c0ad4b8ba1282aaa2d69610c)",
+      "timestamp": "2025-06-17T16:30:48.349Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348353415.\n[Lihat Transaksi](https://arbiscan.io/tx/0xfe8221bcd915e1f8da60439c3024e783d71538154ae0145596f07245d687fdbd)",
+      "timestamp": "2025-06-17T16:27:20.420Z"
+    },
+    {
+      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348348675.\n[Lihat Transaksi](https://arbiscan.io/tx/0x63cae1cea4f5c605874a5cfa9edb1b96ac475ee2aa7c15a5f52da9d9279dc9f0)",
+      "timestamp": "2025-06-17T16:07:37.405Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348348664.\n[Lihat Transaksi](https://arbiscan.io/tx/0x1974fa1918c878cdaa6ef8d8f5c173636303c62f5746e75b965d3b97b5f5c780)",
+      "timestamp": "2025-06-17T16:07:35.497Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348348615.\n[Lihat Transaksi](https://arbiscan.io/tx/0x99ff6f8b47478bd7d82276e5024cc34e5f1cf4f2042afe85eb52d5fe70117a2f)",
+      "timestamp": "2025-06-17T16:07:22.845Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348348574.\n[Lihat Transaksi](https://arbiscan.io/tx/0x8cd31e1d0c33b4e0fffc19d429c66d4eab9db096ffc035ddf5a63a0a104ce997)",
+      "timestamp": "2025-06-17T16:07:13.892Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348348550.\n[Lihat Transaksi](https://arbiscan.io/tx/0x53d6668559d13805bf0e2c1ace13971d514903134c87aed4babfe28675be2224)",
+      "timestamp": "2025-06-17T16:07:07.316Z"
+    },
+    {
+      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348348374.\n[Lihat Transaksi](https://arbiscan.io/tx/0x3c9485e28dccfb24060387163b396701be155f93779e6c57db4fe2583de1aa82)",
+      "timestamp": "2025-06-17T16:06:21.703Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348348362.\n[Lihat Transaksi](https://arbiscan.io/tx/0x980820e5b7cc73ac07a5ee307ac892fdf0ba1f60955d5c07c994936cec4bbf54)",
+      "timestamp": "2025-06-17T16:06:19.410Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348348243.\n[Lihat Transaksi](https://arbiscan.io/tx/0x10fa0b0717d730d80e90d2008b9fe4ddd923f00b37e42f51e64792a2e60112e9)",
+      "timestamp": "2025-06-17T16:05:50.493Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348348090.\n[Lihat Transaksi](https://arbiscan.io/tx/0x1a7ed12680e5a1297b6ae8b3886a159868bd94b4f7c00df497465cc75d7b41c5)",
+      "timestamp": "2025-06-17T16:05:10.717Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348348062.\n[Lihat Transaksi](https://arbiscan.io/tx/0x6c242f7264e302f3d0341ebec253384750d49cffd86caded2ca584a520ddff1f)",
+      "timestamp": "2025-06-17T16:05:02.793Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348348012.\n[Lihat Transaksi](https://arbiscan.io/tx/0x6bfa8d3be01cd8da52b305ae7de607efcd35fced9b08ca01e34db8b31db0e61a)",
+      "timestamp": "2025-06-17T16:04:49.893Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348347995.\n[Lihat Transaksi](https://arbiscan.io/tx/0x92625c95ac358913992a77ffe3a06d7ad4fbcf9c0730cfa811817dbf08040526)",
+      "timestamp": "2025-06-17T16:04:45.264Z"
+    },
+    {
+      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348347991.\n[Lihat Transaksi](https://arbiscan.io/tx/0x5cd6f1b77541d64e235410744e6b40154a14fd90f8b781ec3a22aebc1cc83f72)",
+      "timestamp": "2025-06-17T16:04:44.339Z"
+    },
+    {
+      "text": "🍣 **SushiSwap: Router Alert!**\nFungsi **swapExactTokensForETH** dipanggil di Blok 348347887.\n[Lihat Transaksi](https://arbiscan.io/tx/0x458c4381bc59b8b55075951d4e3ac991c18ca111a28da999039e694e3aaff928)",
+      "timestamp": "2025-06-17T16:04:17.590Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348347682.\n[Lihat Transaksi](https://arbiscan.io/tx/0x364bbbe2ee99b4d5870406b52aa8a5a1da38a3e6a2666e3d2c2e52fb938e8f62)",
+      "timestamp": "2025-06-17T16:03:34.466Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348347546.\n[Lihat Transaksi](https://arbiscan.io/tx/0x9837a2ce0644d6b1f42348d47a55d8388aa3093986eafe1762ac02608944a9af)",
+      "timestamp": "2025-06-17T16:02:54.936Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348347446.\n[Lihat Transaksi](https://arbiscan.io/tx/0x083c75e7e72e23743082862b7ff3a15841ce72acc4f76e2bf8998508fbdc0188)",
+      "timestamp": "2025-06-17T16:02:28.395Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348347441.\n[Lihat Transaksi](https://arbiscan.io/tx/0xe25b2301d5ff59df186b384d7e8c651bb1ba34fcf54660d7fbba9e888cffbb6b)",
+      "timestamp": "2025-06-17T16:02:27.779Z"
+    },
+    {
+      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348347369.\n[Lihat Transaksi](https://arbiscan.io/tx/0x62e9f511128c37c0c88f78672cca2f4decc1509d70eaab739c5a266883f25569)",
+      "timestamp": "2025-06-17T16:02:08.653Z"
+    },
+    {
+      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348347311.\n[Lihat Transaksi](https://arbiscan.io/tx/0xd9d13351648e61d80da60f3bf49af59a3f469f79ca7884ca25ed7fc995b3b9c8)",
+      "timestamp": "2025-06-17T16:01:55.594Z"
+    },
+    {
+      "text": "🍣 **SushiSwap: Router Alert!**\nFungsi **swapExactTokensForTokensSupportingFeeOnTransferTokens** dipanggil di Blok 348347285.\n[Lihat Transaksi](https://arbiscan.io/tx/0x5aca10ab133c2ec549bf18a40db742fdcdf0d4f66179ccfac455dec4f27af587)",
+      "timestamp": "2025-06-17T16:01:46.645Z"
+    },
+    {
+      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348347174.\n[Lihat Transaksi](https://arbiscan.io/tx/0x5d72a07397f3cecb051fdb4351e7dbf3c2bdfa3d9bf4e39cc0255061f51927a0)",
+      "timestamp": "2025-06-17T16:01:23.622Z"
+    },
+    {
       "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348344500.\n[Lihat Transaksi](https://arbiscan.io/tx/0x418de238c6d08090723243ebc022d207fa253969b59712671e753c102843d363)",
       "timestamp": "2025-06-17T15:50:08.795Z"
     },
@@ -27,178 +199,6 @@
     {
       "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348341899.\n[Lihat Transaksi](https://arbiscan.io/tx/0x291bfdd59fcc5fc9d5d7a44ff5d0847dd92a3025c4253bcc1832a2e1e87e9b0c)\n\n---\n\n🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348341899.\n[Lihat Transaksi](https://arbiscan.io/tx/0x45bbb6eaaf29637b1f5e4c691a5acbcbc6bf467d256e72af4816b239261720c3)",
       "timestamp": "2025-06-17T15:39:14.710Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348341884.\n[Lihat Transaksi](https://arbiscan.io/tx/0xddaf281f523a9af50a5fd8eaa90987e1d677892c1a41fde123709d679012f7fd)",
-      "timestamp": "2025-06-17T15:39:10.876Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348341856.\n[Lihat Transaksi](https://arbiscan.io/tx/0xc49651618786094c49b8fb7270d6d2c0ef8f05c10d9b67662d5882fb295c2b4f)",
-      "timestamp": "2025-06-17T15:39:05.553Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348340169.\n[Lihat Transaksi](https://arbiscan.io/tx/0x315e881206e308d45ed0bef01401ea6c63348b4d0a56c06fcdc037cbebe90b36)",
-      "timestamp": "2025-06-17T15:32:03.813Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348340076.\n[Lihat Transaksi](https://arbiscan.io/tx/0x94259b05de642b20ba02493be5e6e7440fb7f5dc2c1f9f0243c24b0ecd0a3ecf)",
-      "timestamp": "2025-06-17T15:31:43.337Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348301044.\n[Lihat Transaksi](https://arbiscan.io/tx/0xc7af0cc3bc4abe8b9b997402707c5e26a8d7ec0a6ab0df0d41356bd1d01e1133)",
-      "timestamp": "2025-06-17T12:49:01.537Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348301031.\n[Lihat Transaksi](https://arbiscan.io/tx/0x4f5774983a3d2c24302c44335cc1b197574eb141102776fb70df87b637e6e1b2)",
-      "timestamp": "2025-06-17T12:48:58.836Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348300966.\n[Lihat Transaksi](https://arbiscan.io/tx/0x2030848802a24c7576b281cce6276b0e086b85596ccd69f6d61bf41eac05d048)",
-      "timestamp": "2025-06-17T12:48:42.540Z"
-    },
-    {
-      "text": "🍣 **SushiSwap: Router Alert!**\nFungsi **swapExactTokensForTokensSupportingFeeOnTransferTokens** dipanggil di Blok 348300944.\n[Lihat Transaksi](https://arbiscan.io/tx/0x4ffd98d1cc8d962d1d21564468206aa09fb64848701e5d78133dbc9ab1ab2808)",
-      "timestamp": "2025-06-17T12:48:37.069Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348300896.\n[Lihat Transaksi](https://arbiscan.io/tx/0x7bab1b8383a4699525b30e264c7c7f02f7cf9637b0c9f0a06f6cffcece4f6e00)",
-      "timestamp": "2025-06-17T12:48:25.247Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348300729.\n[Lihat Transaksi](https://arbiscan.io/tx/0xb90c81a70f0075b86b57079cf754012a9fb4821039b87d8957240825dc2244e1)",
-      "timestamp": "2025-06-17T12:47:43.396Z"
-    },
-    {
-      "text": "🍣 **SushiSwap: Router Alert!**\nFungsi **swapExactTokensForTokensSupportingFeeOnTransferTokens** dipanggil di Blok 348300724.\n[Lihat Transaksi](https://arbiscan.io/tx/0x041b65d30dc621fa5172b55f74f5fe262688c77dbec2ae5c9d0cf36cd19d4f52)",
-      "timestamp": "2025-06-17T12:47:43.346Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348300322.\n[Lihat Transaksi](https://arbiscan.io/tx/0x78cb195e00c6b9d84fdb5d8d231b8c29bd3b56b195843f609c89b2427108cee2)",
-      "timestamp": "2025-06-17T12:46:02.036Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348297595.\n[Lihat Transaksi](https://arbiscan.io/tx/0x094bdccb677a01928c9acdeac383d3aebdeff05fd72014c057927bb567ca1cf5)",
-      "timestamp": "2025-06-17T12:34:36.140Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348289008.\n[Lihat Transaksi](https://arbiscan.io/tx/0x562cdf611c924bccc745462ffd74e88eb0d5093bfa0aa3255ca43a7d2c97140c)",
-      "timestamp": "2025-06-17T11:58:45.660Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348288872.\n[Lihat Transaksi](https://arbiscan.io/tx/0x8ec96553ad0655beac1747e76e0186f44e8e8372b2db47d664370ba4a8cab402)",
-      "timestamp": "2025-06-17T11:58:13.960Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348288806.\n[Lihat Transaksi](https://arbiscan.io/tx/0x443613df0da5ac260bcbad9253e5bf2598d82c5fed8d1f97b1cc19e39003b328)",
-      "timestamp": "2025-06-17T11:57:56.766Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348288789.\n[Lihat Transaksi](https://arbiscan.io/tx/0xf5cfbb97d31c9e04a9cc9ed0a3c06f9049c1a895cf33ed47000261b3d6a27cb4)",
-      "timestamp": "2025-06-17T11:57:52.699Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348288710.\n[Lihat Transaksi](https://arbiscan.io/tx/0x4cf763ca1362669658ceb04174c61571efe673726f5a2a8a85e8605e36a13aae)",
-      "timestamp": "2025-06-17T11:57:34.490Z"
-    },
-    {
-      "text": "🍣 **SushiSwap: Router Alert!**\nFungsi **swapExactTokensForTokensSupportingFeeOnTransferTokens** dipanggil di Blok 348288650.\n[Lihat Transaksi](https://arbiscan.io/tx/0xa85b9b54a8f4f728c1aa9145afde67dbb2714f2221551530ca837ce6b3ff0276)",
-      "timestamp": "2025-06-17T11:57:18.301Z"
-    },
-    {
-      "text": "🍣 **SushiSwap: Router Alert!**\nFungsi **swapExactTokensForTokensSupportingFeeOnTransferTokens** dipanggil di Blok 348288458.\n[Lihat Transaksi](https://arbiscan.io/tx/0x7fe1b4ca1afafe012120c06268bc2f655d91355bf3e8a624750e0fe883eda8a7)",
-      "timestamp": "2025-06-17T11:56:29.780Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348288443.\n[Lihat Transaksi](https://arbiscan.io/tx/0x34032f2c000ca14ccca2ae98c225edb3fcee2911e92db2a9af725ac514ee0b82)",
-      "timestamp": "2025-06-17T11:56:25.935Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348288434.\n[Lihat Transaksi](https://arbiscan.io/tx/0x36a4c0da20afa622b248289340a5636719ead2684a42c422ee00140d98da7aa0)",
-      "timestamp": "2025-06-17T11:56:24.264Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348285174.\n[Lihat Transaksi](https://arbiscan.io/tx/0x86ac25cc9f2bb297bad649186179920dd4140297c1f0531df4e768e9beec8f81)",
-      "timestamp": "2025-06-17T11:42:51.587Z"
-    },
-    {
-      "text": "🌉 **Bungee: Socket Bridge Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348285168.\n[Lihat Transaksi](https://arbiscan.io/tx/0x7ecb378db2a458b4161b2e3b7ad0e9e3a35b028027470db1f8418a8cd4549b2a)",
-      "timestamp": "2025-06-17T11:42:50.149Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348276004.\n[Lihat Transaksi](https://arbiscan.io/tx/0x59dbc835d3dc9b06d620c90bc9945513e9524b6a0220b300f9c043d39f14bba7)",
-      "timestamp": "2025-06-17T11:04:31.770Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348275969.\n[Lihat Transaksi](https://arbiscan.io/tx/0xc3fd0557e0a8c9f07aaa8395baac8c6fbcf930ea0ec692e58315d444b0bc5e5e)",
-      "timestamp": "2025-06-17T11:04:22.877Z"
-    },
-    {
-      "text": "🍣 **SushiSwap: Router Alert!**\nFungsi **swapExactTokensForTokensSupportingFeeOnTransferTokens** dipanggil di Blok 348275764.\n[Lihat Transaksi](https://arbiscan.io/tx/0x9cd1802d4186c6a704290eff845f21e05f809b6666b8ee91f60563141e24c485)",
-      "timestamp": "2025-06-17T11:03:30.578Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348275759.\n[Lihat Transaksi](https://arbiscan.io/tx/0x0eb615d3e585dbc31325bbf0191938950c01c7f6e21c1dde1040cdc507203ec9)",
-      "timestamp": "2025-06-17T11:03:29.679Z"
-    },
-    {
-      "text": "🍣 **SushiSwap: Router Alert!**\nFungsi **swapExactTokensForTokensSupportingFeeOnTransferTokens** dipanggil di Blok 348275656.\n[Lihat Transaksi](https://arbiscan.io/tx/0xf3205b1cb16d5f16e3472a9734723c337fd0711dd5e0b4750deb8121e9e07c04)",
-      "timestamp": "2025-06-17T11:03:04.161Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nTerdeteksi transaksi di Blok 348271386.\n[Lihat Transaksi](https://arbiscan.io/tx/0x0451be0a2c3035cce6081a9a80f530d5323ceb13ee8198e4c69934a6313534d3)",
-      "timestamp": "2025-06-17T10:45:15.659Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348269179.\n[Lihat Transaksi](https://arbiscan.io/tx/0xb0c53cb5ac12e8ebdcc514c123e266e3e0c5818e5df174584b98530e54628430)",
-      "timestamp": "2025-06-17T10:36:02.095Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348269161.\n[Lihat Transaksi](https://arbiscan.io/tx/0x9d8cd73b2e09d4290c688ec7ca7249d46d42f383e8771370c336e4a44c3ff7cf)",
-      "timestamp": "2025-06-17T10:35:57.963Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348268963.\n[Lihat Transaksi](https://arbiscan.io/tx/0x2941c3cf7c1bd01e4554090129aeb3255b98214bfb6419c425bc3a5b47456f8f)",
-      "timestamp": "2025-06-17T10:35:09.299Z"
-    },
-    {
-      "text": "🌉 **Bungee: Socket Bridge Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348268952.\n[Lihat Transaksi](https://arbiscan.io/tx/0x2831731b7e2f1fa5c6fd1375d4a06f5e8401cec2f68c55f8efc12c503f431870)",
-      "timestamp": "2025-06-17T10:35:08.187Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348268893.\n[Lihat Transaksi](https://arbiscan.io/tx/0x6634152be3583a51d7ea99f174dba0b886755f566a0c11544d520a4fb0f5116c)",
-      "timestamp": "2025-06-17T10:34:52.030Z"
-    },
-    {
-      "text": "🍣 **SushiSwap: Router Alert!**\nFungsi **swapExactETHForTokens** dipanggil di Blok 348268760.\n[Lihat Transaksi](https://arbiscan.io/tx/0xe07079b86f132be704e99898fa05d107d4eb7c427df5f6cc7e16388712e1dc04)",
-      "timestamp": "2025-06-17T10:34:17.644Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348268644.\n[Lihat Transaksi](https://arbiscan.io/tx/0x9848b03facb07fbb64003b8796dcf798c3fb777a7aaf1ab55f32f5b16d3cb8b1)",
-      "timestamp": "2025-06-17T10:33:49.325Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348268483.\n[Lihat Transaksi](https://arbiscan.io/tx/0x0b7e8701f239b24462b84b79f4865d90bb70c62c926265a7b53769ee5ea55ffb)\n\n---\n\n🌉 **Bungee: Socket Bridge Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348268483.\n[Lihat Transaksi](https://arbiscan.io/tx/0xe464a513fd7b68d8b51a71068a9879a0ae9fbfe0c3ba1a5da7b30139017584f5)",
-      "timestamp": "2025-06-17T10:33:08.558Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348268385.\n[Lihat Transaksi](https://arbiscan.io/tx/0x366252e5bd9c8b3034cfd104e2c438c550af8c1900110ac83198bf0937fa60f4)",
-      "timestamp": "2025-06-17T10:32:43.643Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348268193.\n[Lihat Transaksi](https://arbiscan.io/tx/0xe1a02c890cf23d92cbd99456538cd56bd60634cbe74c663eee37f89e5e841e57)",
-      "timestamp": "2025-06-17T10:31:55.604Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348268078.\n[Lihat Transaksi](https://arbiscan.io/tx/0xebe1fb6b51398e59f980ba6e67c2e53b5189cf6bc3c77f411ae1c92e4c28c2d3)",
-      "timestamp": "2025-06-17T10:31:27.525Z"
-    },
-    {
-      "text": "🦄 **Uniswap: Universal Router Alert!**\nFungsi **execute** dipanggil di Blok 348254474.\n[Lihat Transaksi](https://arbiscan.io/tx/0xb178a1defff3368dca586f54a6196d8d7d73822f5da018783088a6185fa62c1a)",
-      "timestamp": "2025-06-17T09:34:43.798Z"
-    },
-    {
-      "text": "👻 **Aave v3: Pool Alert!**\nInteraksi kontrak (tidak terdekode) terdeteksi di Blok 348254435.\n[Lihat Transaksi](https://arbiscan.io/tx/0x216da693c404ed313ecd668e6ecbf996204f40752758dfe481a6f5415e07607e)",
-      "timestamp": "2025-06-17T09:34:33.807Z"
     }
   ]
 }
