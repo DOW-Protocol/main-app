@@ -1,25 +1,26 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+// File: webapp/app/layout.tsx
+// GANTI SEMUA ISI FILE DENGAN KODE INI UNTUK TES
+
+import './globals.css';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "DOW Protocol",
-  description: "On-Chain Monitoring",
+  title: 'DOW Protocol - TESTING',
+  description: 'DOW Protocol Command Center',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className="bg-black text-white">
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          {children}
-          <Footer />
+      <body>
+        <div style={{ border: '5px solid red', padding: '20px', color: 'white' }}>
+          <h1 style={{color: 'red', fontSize: '24px'}}>LAYOUT SEDANG DI-TES</h1>
+          <hr style={{margin: '20px 0'}} />
+          {children} {/* Ini adalah tempat page.tsx (yang isinya "Halo Dunia") akan muncul */}
         </div>
       </body>
     </html>
