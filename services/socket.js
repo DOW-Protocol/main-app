@@ -6,7 +6,7 @@ const httpServer = http.createServer();
 // Pasang server WebSocket di atasnya
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:3000", // Izinkan koneksi dari frontend Next.js kita
+    origin: process.env.FRONTEND_URL, // Izinkan koneksi dari frontend Next.js kita
     methods: ["GET", "POST"]
   }
 });

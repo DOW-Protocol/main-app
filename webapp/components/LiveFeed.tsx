@@ -15,6 +15,8 @@ export default function LiveFeed() {
   const alertsRef = useRef<Alert[]>([]);
 
   useEffect(() => {
+    socket.connect();
+    
     function onConnect() {
       setIsConnected(true);
     }
