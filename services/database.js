@@ -16,3 +16,17 @@ export async function getWatchersForAddress(address) {
   }
   return Array.isArray(data) ? data.map(item => item.user_id) : [];
 }
+
+export async function recordAlert(alertObject) {
+  const { data, error } = await supabase
+    .from('alerts')
+    .insert([
+      { message: alertObject.text, timestamp: alertObject.timestamp },
+    ]);
+
+  if (error) {
+    console.error('❌ Error mencatat alert ke Supabase:', error);
+  } else {
+    console.log('--> Alert berhasil dicatat ke Supabase.');
+  }
+}

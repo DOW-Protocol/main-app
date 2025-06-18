@@ -78,3 +78,14 @@ export async function sendAndRecordMessage(alertObject, io) {
     console.error(`❌ Gagal mengirim atau mencatat pesan: ${error.message}`);
   }
 }
+
+export async function sendChannelMessage(message) {
+    try {
+        const channel = await client.channels.fetch(config.CHANNEL_ID);
+        if (channel && channel.isTextBased()) {
+            await channel.send(message);
+        }
+    } catch (error) {
+        console.error(`❌ Gagal mengirim pesan ke channel: ${error.message}`);
+    }
+}
