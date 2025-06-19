@@ -1,12 +1,41 @@
-import { createServer } from '@/app/lib/supabase-server'
-import { cookies } from 'next/headers'
+'use client'
+
+import { useEffect, useState } from 'react'
+import { createBrowserClient } from '@/app/lib/supabase-browser'
 import Link from 'next/link'
 import LogoutButton from './LogoutButton'
 
-export default async function AuthButton() {
-  const cookieStore = cookies()
-  const supabase = createServer()
-  const { data: { session } } = await supabase.auth.getSession()
+export default function AuthButton() {
+  const [session, setSession] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const supabase = createBrowserClient()
+
+  useEffect(() => {
+    const getSession = async () => {
+      const { data } = await supabase.auth.getSession()
+      setSession(data.session)
+      setLoading(false)
+    }
+    getSession()
+
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setSession(session)
+      }
+    )
+
+    return () => {
+      authListener.subscription.unsubscribe()
+    }
+  }, [supabase.auth])
+
+  if (loading) {
+    return (
+      <div className="px-4 py-2">
+        <div className="w-4 h-4 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    )
+  }
 
   return session ? (
     <div className="flex items-center gap-4">

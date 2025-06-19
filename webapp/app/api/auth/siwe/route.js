@@ -20,7 +20,7 @@ export async function POST(request) {
     }
 
     // Create Supabase client
-    const supabase = createServer()
+    const supabase = await createServer()
 
     // Check if user exists with this wallet address
     let { data: existingUser, error: fetchError } = await supabase
