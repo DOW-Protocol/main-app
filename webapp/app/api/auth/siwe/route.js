@@ -5,7 +5,23 @@ import { createServer } from '@/app/lib/supabase-server'
 
 export async function POST(request) {
   try {
-    const { message, signature, address } = await request.json()
+    const { message, signature, address, nonce } = await request.json()
+
+    // Validate nonce first
+    const nonceResponse = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/auth/nonce`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ nonce }),
+    })
+
+    if (!nonceResponse.ok) {
+      return NextResponse.json(
+        { error: 'Invalid or expired nonce' },
+        { status: 400 }
+      )
+    }
 
     // Verify the SIWE message
     const siweMessage = new SiweMessage(message)
@@ -14,6 +30,14 @@ export async function POST(request) {
     if (!fields.success) {
       return NextResponse.json(
         { error: 'Invalid signature' },
+        { status: 400 }
+      )
+    }
+
+    // Additional validation: ensure the nonce in the message matches the provided nonce
+    if (siweMessage.nonce !== nonce) {
+      return NextResponse.json(
+        { error: 'Nonce mismatch' },
         { status: 400 }
       )
     }

@@ -1,48 +1,44 @@
 
 'use client'
 
-import { useState, useEffect } from 'react'
-import { ethers } from 'ethers'
+import { useState } from 'react'
+import { useAccount, useConnect, useSignMessage, useChainId } from 'wagmi'
 import { SiweMessage } from 'siwe'
+import { injected } from 'wagmi/connectors'
 
 export default function WalletConnectButton() {
   const [isConnecting, setIsConnecting] = useState(false)
-  const [account, setAccount] = useState(null)
   const [showWalletOptions, setShowWalletOptions] = useState(false)
+  
+  const { address, isConnected } = useAccount()
+  const { connect } = useConnect()
+  const { signMessageAsync } = useSignMessage()
+  const chainId = useChainId()
 
-  useEffect(() => {
-    // Check if already connected
-    if (window.ethereum) {
-      window.ethereum.request({ method: 'eth_accounts' })
-        .then(accounts => {
-          if (accounts.length > 0) {
-            setAccount(accounts[0])
-          }
-        })
-        .catch(console.error)
-    }
-  }, [])
-
-  const connectMetaMask = async () => {
-    if (!window.ethereum) {
-      alert('Please install MetaMask!')
-      return
-    }
-
+  const handleWalletLogin = async () => {
     setIsConnecting(true)
     try {
-      // Request account access
-      const accounts = await window.ethereum.request({
-        method: 'eth_requestAccounts',
-      })
-      
-      const address = accounts[0]
-      setAccount(address)
+      // Connect wallet if not already connected
+      if (!isConnected) {
+        await connect({ connector: injected() })
+        return // Wait for connection to complete
+      }
 
-      // Create SIWE message
+      if (!address) {
+        throw new Error('No wallet address found')
+      }
+
+      // Get nonce from server
+      const nonceResponse = await fetch('/api/auth/nonce')
+      if (!nonceResponse.ok) {
+        throw new Error('Failed to get nonce')
+      }
+      const { nonce } = await nonceResponse.json()
+
+      // Create SIWE message using the siwe library
       const domain = window.location.host
       const origin = window.location.origin
-      const statement = 'Sign in with Ethereum to DOW Protocol'
+      const statement = 'Welcome to DOW Protocol!'
       
       const message = new SiweMessage({
         domain,
@@ -50,18 +46,17 @@ export default function WalletConnectButton() {
         statement,
         uri: origin,
         version: '1',
-        chainId: 1,
-        nonce: Math.random().toString(36).substring(7),
+        chainId,
+        nonce,
+        issuedAt: new Date().toISOString(),
       })
 
       const messageToSign = message.prepareMessage()
 
-      // Sign the message
-      const provider = new ethers.BrowserProvider(window.ethereum)
-      const signer = await provider.getSigner()
-      const signature = await signer.signMessage(messageToSign)
+      // Sign the message using wagmi
+      const signature = await signMessageAsync({ message: messageToSign })
 
-      // Send to our API
+      // Send to our API for verification
       const response = await fetch('/api/auth/siwe', {
         method: 'POST',
         headers: {
@@ -71,6 +66,7 @@ export default function WalletConnectButton() {
           message: messageToSign,
           signature,
           address,
+          nonce,
         }),
       })
 
@@ -85,12 +81,20 @@ export default function WalletConnectButton() {
         alert('Authentication failed: ' + error.error)
       }
     } catch (error) {
-      console.error('Error connecting wallet:', error)
-      alert('Error connecting wallet: ' + error.message)
+      console.error('SIWE Error:', error)
+      alert('Failed to sign in: ' + error.message)
     } finally {
       setIsConnecting(false)
       setShowWalletOptions(false)
     }
+  }
+
+  const connectMetaMask = async () => {
+    if (!window.ethereum) {
+      alert('Please install MetaMask!')
+      return
+    }
+    await handleWalletLogin()
   }
 
   const connectWalletConnect = async () => {
@@ -99,13 +103,19 @@ export default function WalletConnectButton() {
     setShowWalletOptions(false)
   }
 
-  if (account) {
+  if (isConnected && address) {
     return (
       <div className="text-center">
         <p className="text-sm text-gray-400 mb-2">Connected:</p>
         <p className="text-xs font-mono bg-gray-700 px-2 py-1 rounded">
-          {account.slice(0, 6)}...{account.slice(-4)}
+          {address.slice(0, 6)}...{address.slice(-4)}
         </p>
+        <button
+          onClick={handleWalletLogin}
+          className="mt-2 px-3 py-1 text-sm bg-blue-600 hover:bg-blue-700 rounded"
+        >
+          Sign In with Wallet
+        </button>
       </div>
     )
   }
