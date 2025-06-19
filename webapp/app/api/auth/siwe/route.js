@@ -2,7 +2,6 @@
 import { NextResponse } from 'next/server'
 import { SiweMessage } from 'siwe'
 import { createServer } from '@/app/lib/supabase-server'
-import { cookies } from 'next/headers'
 
 export async function POST(request) {
   try {
@@ -23,7 +22,7 @@ export async function POST(request) {
     const supabase = await createServer()
 
     // Check if user exists with this wallet address
-    let { data: existingUser, error: fetchError } = await supabase
+    let { data: existingUser } = await supabase
       .from('auth.users')
       .select('*')
       .eq('raw_user_meta_data->>wallet_address', address.toLowerCase())
@@ -56,7 +55,7 @@ export async function POST(request) {
     }
 
     // Generate session token
-    const { data: session, error: sessionError } = await supabase.auth.admin.generateLink({
+    const { error: sessionError } = await supabase.auth.admin.generateLink({
       type: 'magiclink',
       email: user.email,
       options: {
@@ -71,12 +70,9 @@ export async function POST(request) {
         { status: 500 }
       )
     }
-
-    // Set auth cookies
-    const cookieStore = cookies()
     
     // Create a session for the user
-    const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+    const { error: signInError } = await supabase.auth.signInWithPassword({
       email: user.email,
       password: 'wallet-auth-' + address.toLowerCase()
     })
@@ -88,7 +84,7 @@ export async function POST(request) {
       })
 
       if (!updateError) {
-        const { data: retrySignIn, error: retryError } = await supabase.auth.signInWithPassword({
+        const { error: retryError } = await supabase.auth.signInWithPassword({
           email: user.email,
           password: 'wallet-auth-' + address.toLowerCase()
         })
