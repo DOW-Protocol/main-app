@@ -18,7 +18,7 @@ export async function getWatchersForAddress(address) {
 }
 
 export async function recordAlert(alertObject) {
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from('alerts')
     .insert([
       { message: alertObject.text, timestamp: alertObject.timestamp },
